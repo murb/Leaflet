@@ -1,5 +1,5 @@
 /* @preserve
- * Leaflet 1.2.0, a JS library for interactive maps. http://leafletjs.com
+ * Leaflet 1.2.0+v1.2.0-patched.836405f, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2017 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 (function (global, factory) {
@@ -8,7 +8,7 @@
 	(factory((global.L = {})));
 }(this, (function (exports) { 'use strict';
 
-var version = "1.2.0";
+var version = "1.2.0+v1.2.0-patched.836405f6";
 
 /*
  * @namespace Util
@@ -390,7 +390,7 @@ Class.addInitHook = function (fn) { // (Function) || (String, args...)
 };
 
 function checkDeprecatedMixinEvents(includes) {
-	if (!L || !L.Mixin) { return; }
+	if (typeof L === 'undefined' || !L || !L.Mixin) { return; }
 
 	includes = isArray(includes) ? includes : [includes];
 
